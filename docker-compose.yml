@@ -1,0 +1,6 @@
+services:
+  yfb-screen-page:
+    build: .
+    image: yfb-screen-page:latest
+    ports:
+      - 8930:80

@@ -1,0 +1,19 @@
+# =========== 生产 ===========
+prod_deploy:
+  script:
+    - docker-compose up -d --build
+  rules:
+    - if: $CI_COMMIT_BRANCH =~ /^main/
+  tags:
+    - ryf
+    - docker
+
+prod_clean:
+  stage: clean
+  script:
+    - docker image prune -f
+  rules:
+    - if: $CI_COMMIT_BRANCH =~ /^main/
+  tags:
+    - ryf
+    - docker
