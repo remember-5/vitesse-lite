@@ -56,6 +56,7 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      globs: ['src/components/*.{vue}'],
       resolvers: [ElementPlusResolver()],
     }),
 
